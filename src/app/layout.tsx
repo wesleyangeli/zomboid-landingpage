@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
-import { assetPath } from "@/lib/paths";
+import { siteConfig } from "@/data/server-config";
+import { absoluteUrl, siteUrl } from "@/lib/paths";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -15,10 +16,14 @@ const rajdhani = Rajdhani({
   weight: ["400", "500", "600", "700"],
 });
 
+const ogTitle = `${siteConfig.name} — ${siteConfig.tagline}`;
+const ogDescription =
+  "Servidor brasileiro de Project Zomboid — PvP Season em Muldraugh, KY. 3x XP, 60+ mods, safehouses sagradas e hordas implacáveis.";
+
 export const metadata: Metadata = {
-  title: "Servidor Torre — PvP Season | Project Zomboid",
-  description:
-    "Servidor brasileiro de Project Zomboid — PvP Season em Muldraugh, KY. 3x XP, 60+ mods, safehouses sagradas e hordas implacáveis.",
+  metadataBase: new URL(siteUrl),
+  title: `${ogTitle} | Project Zomboid`,
+  description: ogDescription,
   keywords: [
     "Project Zomboid",
     "servidor",
@@ -29,9 +34,27 @@ export const metadata: Metadata = {
     "survival",
   ],
   openGraph: {
-    title: "Servidor Torre — PvP Season",
-    description: "Sobreviva. Lute. Domine. Project Zomboid BR.",
-    images: [assetPath("/images/logo.png")],
+    type: "website",
+    locale: "pt_BR",
+    url: siteUrl,
+    siteName: siteConfig.name,
+    title: ogTitle,
+    description: ogDescription,
+    images: [
+      {
+        url: absoluteUrl("/images/logo.png"),
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.name} — ${siteConfig.tagline}`,
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ogTitle,
+    description: ogDescription,
+    images: [absoluteUrl("/images/logo.png")],
   },
 };
 

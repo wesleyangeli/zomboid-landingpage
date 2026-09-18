@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   assetPrefix: `${basePath}/`,
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_URL: `https://wesleyangeli.github.io${basePath}`,
   },
   images: {
     unoptimized: true,
