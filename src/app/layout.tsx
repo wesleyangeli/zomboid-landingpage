@@ -42,11 +42,11 @@ export const metadata: Metadata = {
     description: ogDescription,
     images: [
       {
-        url: absoluteUrl("/images/logo.png"),
-        width: 512,
-        height: 512,
+        url: absoluteUrl("/images/og-image.jpg"),
+        width: 1200,
+        height: 630,
         alt: `${siteConfig.name} — ${siteConfig.tagline}`,
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: ogTitle,
     description: ogDescription,
-    images: [absoluteUrl("/images/logo.png")],
+    images: [absoluteUrl("/images/og-image.jpg")],
   },
 };
 
