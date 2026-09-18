@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Servidor Torre — Landing Page
 
-## Getting Started
+Landing page estática para o servidor **Torre PvP Season** de Project Zomboid.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router)
+- Tailwind CSS 4
+- Export estático (`output: 'export'`)
+
+## Desenvolvimento
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build estático (GitHub Pages)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Os arquivos gerados ficam em `out/`. Faça upload dessa pasta no GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
+### GitHub Pages — repositório de projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Se o repositório for `usuario/zomboid-landingpage` (não user.github.io), adicione no `next.config.ts`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```ts
+basePath: "/zomboid-landingpage",
+assetPrefix: "/zomboid-landingpage/",
+```
 
-## Deploy on Vercel
+Depois rode `npm run build` novamente.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy automático (opcional)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Crie `.github/workflows/deploy.yml` com GitHub Actions apontando para a pasta `out/`.
+
+## Assets
+
+- `public/images/logo.png` — logo Torre + zumbi
+- `public/images/hero-bg.png` — background do hero
+
+## Quando divulgar o servidor
+
+Edite `src/data/server-config.ts` ou adicione botões de conexão/Discord no `Hero.tsx` e `Footer.tsx`.

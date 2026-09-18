@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050807;
+  --foreground: #e5e7eb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-void-950: #050807;
+  --color-void-900: #0a0f0c;
+  --color-toxic-400: #4ade80;
+  --color-toxic-500: #22c55e;
+  --color-zombie-100: #f3f4f6;
+  --color-zombie-200: #d1d5db;
+  --color-zombie-300: #9ca3af;
+  --color-zombie-400: #6b7280;
+  --color-zombie-500: #4b5563;
+  --color-zombie-600: #374151;
+  --color-blood-400: #f87171;
+  --color-blood-500: #ef4444;
+  --color-blood-600: #dc2626;
+  --color-blood-950: #1a0505;
+  --font-display: var(--font-orbitron);
+  --font-body: var(--font-rajdhani);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(57, 255, 20, 0.6));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Film grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
