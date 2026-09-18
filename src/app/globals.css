@@ -34,6 +34,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+li,
+dd,
+dt {
+  text-wrap: pretty;
 }
 
 .font-display {

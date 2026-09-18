@@ -8,7 +8,7 @@ export default function ConfigSections() {
           <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
             Configurações Completas
           </h2>
-          <p className="mt-3 text-zombie-300">
+          <p className="mt-3 text-lg font-semibold text-zombie-200 sm:text-xl">
             Todas as regras e parâmetros do servidor documentados
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function ConfigSections() {
               key={section.id}
               className="group rounded-xl border border-toxic-500/10 bg-void-900/40 backdrop-blur-sm open:border-toxic-500/25 open:bg-void-900/70"
             >
-              <summary className="flex cursor-pointer list-none items-center gap-3 px-5 py-4 font-display text-lg font-semibold text-white transition hover:text-toxic-400 [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center gap-3 px-5 py-4 font-display text-xl font-bold text-white transition hover:text-toxic-400 [&::-webkit-details-marker]:hidden">
                 <span className="text-2xl">{section.icon}</span>
                 {section.title}
                 <svg
@@ -36,16 +36,16 @@ export default function ConfigSections() {
                   />
                 </svg>
               </summary>
-              <dl className="space-y-2 border-t border-toxic-500/10 px-5 py-4">
+              <dl className="space-y-3 border-t border-toxic-500/10 px-5 py-5">
                 {section.items.map((item) => (
                   <div
                     key={item.label}
-                    className="flex flex-col gap-0.5 sm:flex-row sm:justify-between sm:gap-4"
+                    className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-6"
                   >
-                    <dt className="text-sm font-medium text-zombie-400">
+                    <dt className="text-base font-bold text-toxic-500/90 sm:min-w-[40%]">
                       {item.label}
                     </dt>
-                    <dd className="text-sm text-zombie-100 sm:text-right">
+                    <dd className="text-base font-semibold text-zombie-100 sm:text-right">
                       {item.value}
                     </dd>
                   </div>

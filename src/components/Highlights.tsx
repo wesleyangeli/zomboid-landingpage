@@ -8,7 +8,7 @@ export default function Highlights() {
           <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
             Destaques do Servidor
           </h2>
-          <p className="mt-3 text-zombie-300">
+          <p className="mt-3 text-lg font-semibold text-zombie-200 sm:text-xl">
             O que torna a Torre uma experiência única de sobrevivência
           </p>
         </div>
@@ -23,10 +23,10 @@ export default function Highlights() {
                 {item.icon}
               </div>
               <span className="text-3xl">{item.icon}</span>
-              <h3 className="mt-4 font-display text-lg font-bold text-toxic-400">
+              <h3 className="mt-4 font-display text-xl font-bold text-toxic-400">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-zombie-300">
+              <p className="mt-2 text-base leading-relaxed text-zombie-100 sm:text-lg">
                 {item.description}
               </p>
             </article>

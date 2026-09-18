@@ -8,7 +8,7 @@ export default function Rules() {
           <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
             Regras Rápidas
           </h2>
-          <p className="mt-3 text-zombie-300">
+          <p className="mt-3 text-lg font-semibold text-zombie-200 sm:text-xl">
             Respeite a comunidade e sobreviva com honra
           </p>
         </div>
@@ -19,10 +19,12 @@ export default function Rules() {
               key={rule}
               className="flex items-start gap-4 rounded-xl border border-blood-500/20 bg-blood-950/20 px-5 py-4"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blood-600/30 font-display text-sm font-bold text-blood-400">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blood-600/30 font-display text-base font-black text-blood-400">
                 {index + 1}
               </span>
-              <p className="pt-1 text-zombie-100">{rule}</p>
+              <p className="pt-1.5 text-lg font-semibold text-zombie-100 sm:text-xl">
+                {rule}
+              </p>
             </li>
           ))}
         </ol>

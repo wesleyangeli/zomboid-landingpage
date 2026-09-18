@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { siteConfig, stats } from "@/data/server-config";
+import { assetPath } from "@/lib/paths";
 
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-bg.png"
+          src={assetPath("/images/hero-bg.png")}
           alt=""
           fill
           priority
@@ -20,7 +21,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6">
         <div className="mb-8 flex justify-center">
           <Image
-            src="/images/logo.png"
+            src={assetPath("/images/logo.png")}
             alt={`${siteConfig.name} logo`}
             width={160}
             height={160}
@@ -29,7 +30,7 @@ export default function Hero() {
           />
         </div>
 
-        <p className="mb-2 font-display text-sm tracking-[0.4em] text-toxic-500 sm:text-base">
+        <p className="mb-2 font-display text-base font-bold tracking-[0.35em] text-toxic-400 sm:text-lg">
           PROJECT ZOMBOID
         </p>
 
@@ -40,10 +41,10 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-zombie-200 sm:text-xl">
+        <p className="mx-auto mt-6 max-w-2xl text-xl font-bold text-zombie-100 sm:text-2xl">
           {siteConfig.subtitle}
         </p>
-        <p className="mt-2 text-sm text-zombie-400">
+        <p className="mt-2 text-base font-semibold text-zombie-200 sm:text-lg">
           {siteConfig.location} · Season PvP · Comunidade BR
         </p>
 
@@ -53,10 +54,10 @@ export default function Hero() {
               key={stat.label}
               className="rounded-lg border border-toxic-500/20 bg-void-900/60 px-5 py-3 backdrop-blur-sm"
             >
-              <p className="font-display text-2xl font-bold text-toxic-400">
+              <p className="font-display text-3xl font-black text-toxic-400">
                 {stat.value}
               </p>
-              <p className="text-xs uppercase tracking-wider text-zombie-400">
+              <p className="text-sm font-bold uppercase tracking-wider text-zombie-200">
                 {stat.label}
               </p>
             </div>
@@ -64,13 +65,13 @@ export default function Hero() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blood-500/30 bg-blood-950/40 px-6 py-3 text-sm font-medium text-zombie-200">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blood-500/30 bg-blood-950/40 px-6 py-3 text-base font-bold text-zombie-100">
             <span className="h-2 w-2 animate-pulse rounded-full bg-toxic-400" />
             Dados de conexão em breve
           </span>
           <a
             href="#configuracoes"
-            className="inline-flex items-center rounded-full border border-toxic-500/40 bg-toxic-500/10 px-6 py-3 text-sm font-semibold text-toxic-300 transition hover:bg-toxic-500/20 hover:text-toxic-200"
+            className="inline-flex items-center rounded-full border border-toxic-500/40 bg-toxic-500/10 px-6 py-3 text-base font-bold text-toxic-300 transition hover:bg-toxic-500/20 hover:text-toxic-100"
           >
             Ver configurações →
           </a>

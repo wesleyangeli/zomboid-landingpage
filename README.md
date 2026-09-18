@@ -36,9 +36,15 @@ assetPrefix: "/zomboid-landingpage/",
 
 Depois rode `npm run build` novamente.
 
-### Deploy automático (opcional)
+### Deploy automático (GitHub Actions)
 
-Crie `.github/workflows/deploy.yml` com GitHub Actions apontando para a pasta `out/`.
+1. Abra **Settings → Pages** do repositório
+2. Em **Build and deployment → Source**, selecione **GitHub Actions**
+3. Vá em **Actions** e rode o workflow **Deploy GitHub Pages** (ou faça push na `main`)
+
+URL publicada: `https://wesleyangeli.github.io/zomboid-landingpage/`
+
+> Se o deploy falhar com erro 404, o Pages ainda não foi ativado no passo 2.
 
 ## Assets
 

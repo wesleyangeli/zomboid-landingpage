@@ -8,7 +8,7 @@ export default function ModsGrid() {
           <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl">
             Mods Ativos
           </h2>
-          <p className="mt-3 text-zombie-300">
+          <p className="mt-3 text-lg font-semibold text-zombie-200 sm:text-xl">
             Mais de 60 mods selecionados para a melhor experiência
           </p>
         </div>
@@ -19,16 +19,16 @@ export default function ModsGrid() {
               key={cat.category}
               className="rounded-xl border border-toxic-500/10 bg-void-900/50 p-6"
             >
-              <h3 className="font-display text-lg font-bold text-toxic-400">
+              <h3 className="font-display text-xl font-bold text-toxic-400">
                 {cat.category}
               </h3>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 space-y-3">
                 {cat.mods.map((mod) => (
                   <li
                     key={mod}
-                    className="flex items-center gap-2 text-sm text-zombie-200"
+                    className="flex items-center gap-3 text-base font-semibold text-zombie-100 sm:text-lg"
                   >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-toxic-500" />
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-toxic-500" />
                     {mod}
                   </li>
                 ))}

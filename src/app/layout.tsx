@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Rajdhani } from "next/font/google";
+import { assetPath } from "@/lib/paths";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Servidor Torre — PvP Season",
     description: "Sobreviva. Lute. Domine. Project Zomboid BR.",
-    images: ["/images/logo.png"],
+    images: [assetPath("/images/logo.png")],
   },
 };
 
@@ -40,7 +41,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pt-BR"
       className={`${orbitron.variable} ${rajdhani.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-void-950 text-zombie-100">{children}</body>
+      <body className="min-h-full bg-void-950 text-lg font-semibold leading-relaxed text-zombie-100">
+        {children}
+      </body>
     </html>
   );
 }
