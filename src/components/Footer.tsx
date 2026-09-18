@@ -20,7 +20,7 @@ export default function Footer() {
           — {siteConfig.team} · {siteConfig.name} {siteConfig.tagline}
         </p>
         <p className="text-sm font-medium text-zombie-400 sm:text-base">
-          Landing page estática · Dados de conexão serão divulgados em breve
+          Acesso ao servidor mediante código de convite
         </p>
       </div>
     </footer>

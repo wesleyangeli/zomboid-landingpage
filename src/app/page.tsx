@@ -2,6 +2,7 @@ import ConfigSections from "@/components/ConfigSections";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
+import InviteSection from "@/components/InviteSection";
 import LightningBackground from "@/components/LightningBackground";
 import ModsGrid from "@/components/ModsGrid";
 import Navbar from "@/components/Navbar";
@@ -19,6 +20,7 @@ export default function Home() {
           <ConfigSections />
           <ModsGrid />
           <Rules />
+          <InviteSection />
         </main>
         <Footer />
       </div>

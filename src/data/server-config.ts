@@ -4,6 +4,8 @@ export const siteConfig = {
   subtitle: "Sobreviva. Lute. Domine.",
   location: "Muldraugh, KY",
   team: "Equipe Torre",
+  /** App ID do Meta for Developers — remove o aviso fb:app_id no Facebook Debugger */
+  facebookAppId: "",
 };
 
 export const stats = [
@@ -234,4 +236,5 @@ export const navLinks = [
   { href: "#configuracoes", label: "Configurações" },
   { href: "#mods", label: "Mods" },
   { href: "#regras", label: "Regras" },
+  { href: "#convite", label: "Convite" },
 ];

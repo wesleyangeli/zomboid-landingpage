@@ -51,6 +51,18 @@ URL publicada: `https://wesleyangeli.github.io/zomboid-landingpage/`
 - `public/images/logo.png` — logo Torre + zumbi
 - `public/images/hero-bg.png` — background do hero
 
+## Preview no WhatsApp / Facebook Debugger
+
+Se aparecer aviso `fb:app_id` ausente:
+
+1. Acesse [Meta for Developers](https://developers.facebook.com/apps/)
+2. **Create App** → tipo **Other** → **Business**
+3. Copie o **App ID** (número)
+4. Cole em `src/data/server-config.ts` → `facebookAppId: "SEU_APP_ID"`
+5. Faça commit, push e **Scrape Again** no [Facebook Debugger](https://developers.facebook.com/tools/debug/)
+
+> Esse aviso **não impede** a imagem no WhatsApp — é só recomendação do Facebook.
+
 ## Quando divulgar o servidor
 
 Edite `src/data/server-config.ts` ou adicione botões de conexão/Discord no `Hero.tsx` e `Footer.tsx`.

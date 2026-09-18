@@ -20,10 +20,15 @@ const ogTitle = `${siteConfig.name} — ${siteConfig.tagline}`;
 const ogDescription =
   "Servidor brasileiro de Project Zomboid — PvP Season em Muldraugh, KY. 3x XP, 60+ mods, safehouses sagradas e hordas implacáveis.";
 
+const facebookAppId = siteConfig.facebookAppId.trim();
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: `${ogTitle} | Project Zomboid`,
   description: ogDescription,
+  ...(facebookAppId
+    ? { other: { "fb:app_id": facebookAppId } }
+    : {}),
   keywords: [
     "Project Zomboid",
     "servidor",
