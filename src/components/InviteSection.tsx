@@ -9,12 +9,22 @@ import {
   serverConnection,
 } from "@/data/invite-codes";
 
-function CopyButton({ text, label }: { text: string; label: string }) {
+function CopyField({
+  id,
+  label,
+  value,
+  mono = false,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  mono?: boolean;
+}) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(value);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
@@ -23,13 +33,34 @@ function CopyButton({ text, label }: { text: string; label: string }) {
   };
 
   return (
-    <button
-      type="button"
-      onClick={() => void handleCopy()}
-      className="rounded-lg border border-toxic-500/30 bg-void-900/60 px-4 py-2 text-sm font-bold text-toxic-300 transition hover:border-toxic-500/60 hover:bg-void-900"
-    >
-      {copied ? "Copiado!" : label}
-    </button>
+    <div>
+      <label
+        htmlFor={id}
+        className="mb-2 block text-sm font-bold uppercase tracking-wider text-toxic-500"
+      >
+        {label}
+      </label>
+      <div className="flex gap-2">
+        <input
+          id={id}
+          type="text"
+          readOnly
+          value={value}
+          className={`min-w-0 flex-1 rounded-lg border border-toxic-500/30 bg-void-950 px-4 py-3 font-semibold text-white focus:outline-none ${
+            mono ? "font-mono" : ""
+          }`}
+        />
+        <button
+          type="button"
+          onClick={() => void handleCopy()}
+          title={copied ? "Copiado!" : "Copiar"}
+          aria-label={`Copiar ${label.toLowerCase()}`}
+          className="shrink-0 rounded-lg border border-toxic-500/30 bg-void-900/60 px-4 py-3 text-sm font-bold text-toxic-300 transition hover:border-toxic-500/60 hover:bg-void-900"
+        >
+          {copied ? "✓" : "Copiar"}
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -94,47 +125,33 @@ export default function InviteSection() {
                 </span>
               </div>
 
-              <dl className="space-y-4">
-                <div className="rounded-lg border border-toxic-500/10 bg-void-950/50 p-4">
-                  <dt className="text-sm font-bold uppercase tracking-wider text-toxic-500">
-                    Nome do servidor
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold text-white">
-                    {serverConnection.name}
-                  </dd>
-                </div>
+              <div className="space-y-4">
+                <CopyField
+                  id="server-name"
+                  label="Nome do servidor"
+                  value={serverConnection.name}
+                />
+                <CopyField
+                  id="server-host"
+                  label="IP / Domínio"
+                  value={serverConnection.host}
+                  mono
+                />
+                <CopyField
+                  id="server-port"
+                  label="Porta"
+                  value={serverConnection.port}
+                  mono
+                />
+              </div>
 
-                <div className="rounded-lg border border-toxic-500/10 bg-void-950/50 p-4">
-                  <dt className="text-sm font-bold uppercase tracking-wider text-toxic-500">
-                    IP / Domínio
-                  </dt>
-                  <dd className="mt-1 font-mono text-lg font-semibold text-zombie-100">
-                    {serverConnection.host}
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-toxic-500/10 bg-void-950/50 p-4">
-                  <dt className="text-sm font-bold uppercase tracking-wider text-toxic-500">
-                    Porta
-                  </dt>
-                  <dd className="mt-1 font-mono text-lg font-semibold text-zombie-100">
-                    {serverConnection.port}
-                  </dd>
-                </div>
-
-                <div className="rounded-lg border border-toxic-500/20 bg-toxic-500/5 p-4">
-                  <dt className="text-sm font-bold uppercase tracking-wider text-toxic-400">
-                    Endereço completo
-                  </dt>
-                  <dd className="mt-1 font-mono text-xl font-bold text-toxic-300">
-                    {address}
-                  </dd>
-                </div>
-              </dl>
-
-              <div className="flex flex-wrap justify-center gap-3">
-                <CopyButton text={serverConnection.host} label="Copiar IP" />
-                <CopyButton text={address} label="Copiar endereço" />
+              <div className="rounded-lg border border-toxic-500/20 bg-toxic-500/5 p-4">
+                <p className="text-sm font-bold uppercase tracking-wider text-toxic-400">
+                  Endereço completo
+                </p>
+                <p className="mt-1 font-mono text-xl font-bold text-toxic-300">
+                  {address}
+                </p>
               </div>
 
               <div className="rounded-lg border border-zombie-600/30 bg-void-950/40 p-4 text-sm font-semibold text-zombie-300">
