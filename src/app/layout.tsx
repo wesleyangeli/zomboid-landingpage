@@ -18,7 +18,7 @@ const rajdhani = Rajdhani({
 
 const ogTitle = `${siteConfig.name} — ${siteConfig.tagline}`;
 const ogDescription =
-  "Servidor brasileiro de Project Zomboid — PvP Season em Muldraugh, KY. 3x XP, 60+ mods, safehouses sagradas e hordas implacáveis.";
+  "Servidor brasileiro de Project Zomboid — Season Sobrevivência em Muldraugh, KY. 3x XP, 60+ mods, safehouses sagradas e hordas implacáveis.";
 
 const facebookAppId = siteConfig.facebookAppId.trim();
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords: [
     "Project Zomboid",
     "servidor",
-    "PvP",
+    "sobrevivência",
     "BR",
     "Torre",
     "zomboid",
@@ -69,7 +69,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pt-BR"
       className={`${orbitron.variable} ${rajdhani.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-void-950 text-lg font-semibold leading-relaxed text-zombie-100">
+      <body
+        suppressHydrationWarning
+        className="min-h-full bg-void-950 text-lg font-semibold leading-relaxed text-zombie-100"
+      >
         {children}
       </body>
     </html>

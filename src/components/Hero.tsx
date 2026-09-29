@@ -45,7 +45,7 @@ export default function Hero() {
           {siteConfig.subtitle}
         </p>
         <p className="mt-2 text-base font-semibold text-zombie-200 sm:text-lg">
-          {siteConfig.location} · Season PvP · Comunidade BR
+          {siteConfig.location} · Season Sobrevivência · Comunidade BR
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">

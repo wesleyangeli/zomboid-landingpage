@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Servidor Torre",
-  tagline: "PvP Season",
-  subtitle: "Sobreviva. Lute. Domine.",
+  tagline: "Season Sobrevivência",
+  subtitle: "Sobreviva. Explore. Reconstrua.",
   location: "Muldraugh, KY",
   team: "Equipe Torre",
   /** App ID do Meta for Developers — remove o aviso fb:app_id no Facebook Debugger */
@@ -17,10 +17,10 @@ export const stats = [
 
 export const highlights = [
   {
-    icon: "⚔️",
-    title: "PvP Ativado",
+    icon: "🌿",
+    title: "Sobrevivência PvE",
     description:
-      "Combate player vs player com dano baixo — corpo a corpo e armas de fogo — para batalhas mais longas e estratégicas.",
+      "Foco em cooperação, base, loot e progressão — 3x XP, fazenda acelerada e desafio constante contra a horda.",
   },
   {
     icon: "🧟",
@@ -50,16 +50,6 @@ export type ConfigSection = {
 };
 
 export const configSections: ConfigSection[] = [
-  {
-    id: "pvp",
-    icon: "⚔️",
-    title: "PvP",
-    items: [
-      { label: "Status", value: "Ativado — machucar e matar outros players" },
-      { label: "Dano corpo a corpo", value: "Baixo" },
-      { label: "Dano armas de fogo", value: "Baixo" },
-    ],
-  },
   {
     id: "zombies",
     icon: "🧟",
@@ -224,7 +214,7 @@ export const modCategories = [
 ];
 
 export const rules = [
-  "PvP é opcional — respeite quem está fora.",
+  "Cooperação em primeiro lugar — ajude quem precisa.",
   "Safehouses são sagradas — sem roubo.",
   "Sem cheat — anti-cheat ativo.",
   "Respeite o próximo no chat e VOIP.",

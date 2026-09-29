@@ -1,6 +1,6 @@
 # Servidor Torre — Landing Page
 
-Landing page estática para o servidor **Torre PvP Season** de Project Zomboid.
+Landing page estática para o servidor **Torre Season Sobrevivência** de Project Zomboid.
 
 ## Stack
 
