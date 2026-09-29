@@ -1,6 +1,6 @@
 export const serverConnection = {
   name: "Torre dos Jogos",
-  host: "sth-0.southhost.com.br",
+  host: "n3.mines.host",
   port: "16270",
 };
 
