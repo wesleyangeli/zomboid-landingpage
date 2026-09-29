@@ -8,6 +8,26 @@ export const siteConfig = {
   facebookAppId: "",
 };
 
+export const siteMeta = {
+  title: `${siteConfig.name} — ${siteConfig.tagline} | Project Zomboid`,
+  description:
+    "Servidor BR de Project Zomboid focado em sobrevivência PvE — Muldraugh, KY. 3x XP, 60+ mods, safehouses e hordas. Cooperação, base e progressão.",
+  keywords: [
+    "Project Zomboid",
+    "servidor",
+    "sobrevivência",
+    "PvE",
+    "BR",
+    "Torre",
+    "zomboid",
+    "survival",
+    "coop",
+  ] as const,
+  ogTitle: `${siteConfig.name} — ${siteConfig.tagline}`,
+  ogDescription:
+    "Sobrevivência PvE em Muldraugh — 3x XP, 60+ mods, safehouses sagradas. Entre na Torre!",
+};
+
 export const stats = [
   { label: "Players Max", value: "10" },
   { label: "XP Global", value: "3.0x" },
