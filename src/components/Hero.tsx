@@ -66,11 +66,10 @@ export default function Hero() {
 
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="#convite"
+            href="#conectar"
             className="inline-flex items-center gap-2 rounded-full border border-toxic-500/40 bg-toxic-500/10 px-6 py-3 text-base font-bold text-toxic-300 transition hover:bg-toxic-500/20 hover:text-toxic-100"
           >
-            <span className="text-lg">🔒</span>
-            Tenho convite — conectar
+            Conectar ao servidor →
           </a>
           <a
             href="#configuracoes"

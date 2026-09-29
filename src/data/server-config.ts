@@ -236,5 +236,5 @@ export const navLinks = [
   { href: "#configuracoes", label: "Configurações" },
   { href: "#mods", label: "Mods" },
   { href: "#regras", label: "Regras" },
-  { href: "#convite", label: "Convite" },
+  { href: "#conectar", label: "Conectar" },
 ];

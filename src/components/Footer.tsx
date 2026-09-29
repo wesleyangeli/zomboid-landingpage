@@ -20,7 +20,7 @@ export default function Footer() {
           — {siteConfig.team} · {siteConfig.name} {siteConfig.tagline}
         </p>
         <p className="text-sm font-medium text-zombie-400 sm:text-base">
-          Acesso ao servidor mediante código de convite
+          Servidor aberto — veja os dados em Conectar
         </p>
       </div>
     </footer>
